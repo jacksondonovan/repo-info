@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Repo Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <style>
+      .detail-header {
+        margin-left: 10px;
+      }
+      .header-wrapper {
+        display:flex;
+        flex-direction:row;
+        margin:10px 10px;
+      }
+      .card-wrapper {
+        width: 18rem;
+        margin:5px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <a href="/"><button class="btn btn-info">Back</button></a>
+      <h3 class="detail-header">Pull Request ({{pullRequests.length}}) Details for <a href="{{githubRepoURL}}">{{githubRepoURL}}</a></h3>
+    </div>
+    {{#each pullRequests}}
+    <div class="card card-wrapper">
+      <div class="card-header">
+        #{{this.number}} {{this.title}}
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Opened By: {{this.user}}</li>
+        <li class="list-group-item">Total Commits: {{this.commitCount}}</li>
+        <li class="list-group-item">Total Comments: {{this.commentCount}}</li>
+      </ul>
+    </div>
+    {{/each}}
+  </body>
+</html>

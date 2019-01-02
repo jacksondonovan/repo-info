@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Repo Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <style>
+      .splash-header {
+        margin: 10px 10px;
+      }
+      .form-wrapper {
+        margin: 10px 10px;
+      }
+      .form-label {
+        margin-right: 10px;
+      }
+      .form-input {
+        width: 450px;
+      }
+      .form-button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="splash-header">
+      <h3>Welcome to Repo Info</h3>
+      <h5>Enter a github repo URL and receive details about its pull requests</h5>
+    </div>
+    <form class="form-wrapper" action="/repo" method="post">
+      <div class="input-group mb-3" style="display:flex;flex-direction:column;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">
+            <label class="form-label">Github Repo URL</label>
+            <input name="url" type="text" class="form-control form-input" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+          </span>
+        </div>
+        <a class="form-button"><button class="btn btn-info" type="submit">Submit</button></a>
+      </div>
+    </form>
+  </body>
+</html>
